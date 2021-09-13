@@ -1,0 +1,559 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  post:
+    type: page
+    label: Post
+    folder: _posts
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: string
+        name: categories
+        label: Categories
+      - type: string
+        name: description
+        label: Description
+      - type: image
+        name: image
+        label: Image
+      - type: boolean
+        name: published
+        label: Published
+      - type: string
+        name: canonical_url
+        label: Canonical Url
+      - type: image
+        name: hero_image
+        label: Hero Image
+      - type: string
+        name: hero_height
+        label: Hero Height
+      - type: string
+        name: tags
+        label: Tags
+      - type: boolean
+        name: hero_darken
+        label: Hero Darken
+  product:
+    type: page
+    label: Product
+    folder: _products
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: subtitle
+        label: Subtitle
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: product_code
+        label: Product Code
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: image
+        label: Image
+      - type: string
+        name: price
+        label: Price
+      - type: list
+        name: features
+        label: Features
+        items:
+          type: object
+          fields:
+            - type: string
+              name: label
+              label: Label
+            - type: string
+              name: icon
+              label: Icon
+      - type: number
+        name: rating
+        label: Rating
+        subtype: int
+  page_1:
+    type: page
+    label: Page 1
+    match:
+      - example-recipe.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: subtitle
+        label: Subtitle
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: author
+        label: Author
+      - type: date
+        name: date
+        label: Date
+      - type: boolean
+        name: show_sidebar
+        label: Show Sidebar
+      - type: image
+        name: image
+        label: Image
+      - type: image
+        name: hero_image
+        label: Hero Image
+      - type: boolean
+        name: hero_darken
+        label: Hero Darken
+      - type: list
+        name: ingredients
+        label: Ingredients
+        items:
+          type: string
+      - type: list
+        name: method
+        label: Method
+        items:
+          type: string
+      - type: string
+        name: prep_time
+        label: Prep Time
+      - type: string
+        name: cook_time
+        label: Cook Time
+      - type: string
+        name: total_time
+        label: Total Time
+      - type: string
+        name: keywords
+        label: Keywords
+      - type: number
+        name: recipe_yield
+        label: Recipe Yield
+        subtype: int
+      - type: string
+        name: recipe_category
+        label: Recipe Category
+      - type: string
+        name: recipe_cuisine
+        label: Recipe Cuisine
+      - type: string
+        name: calories
+        label: Calories
+  page_2:
+    type: page
+    label: Page 2
+    match:
+      - gallery.md
+      - index.md
+      - landing.md
+      - page-1.md
+      - page-2.md
+      - page-3.md
+      - page-4.md
+      - page-5.md
+      - page-with-contents.md
+      - page-with-notification.md
+      - page-with-video.md
+      - page-without-hero.md
+      - showcase.md
+      - sponsors.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: subtitle
+        label: Subtitle
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: gallery
+        label: Gallery
+      - type: boolean
+        name: show_sidebar
+        label: Show Sidebar
+      - type: string
+        name: callouts
+        label: Callouts
+      - type: string
+        name: hero_height
+        label: Hero Height
+      - type: string
+        name: hero_link
+        label: Hero Link
+      - type: string
+        name: hero_link_text
+        label: Hero Link Text
+      - type: string
+        name: menubar
+        label: Menubar
+      - type: string
+        name: tabs
+        label: Tabs
+      - type: boolean
+        name: hide_footer
+        label: Hide Footer
+      - type: boolean
+        name: toc
+        label: Toc
+      - type: boolean
+        name: hide_hero
+        label: Hide Hero
+      - type: string
+        name: showcase
+        label: Showcase
+      - type: string
+        name: sponsors
+        label: Sponsors
+  page_3:
+    type: page
+    label: Page 3
+    match:
+      - products.md
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: subtitle
+        label: Subtitle
+      - type: string
+        name: layout
+        label: Layout
+      - type: boolean
+        name: show_sidebar
+        label: Show Sidebar
+      - type: string
+        name: sort
+        label: Sort
+  example_footer_menu:
+    type: data
+    label: Example Footer Menu
+    file: example_footer_menu.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: link
+          label: Link
+  example_gallery:
+    type: data
+    label: Example Gallery
+    file: example_gallery.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: title
+          label: Title
+        - type: list
+          name: images
+          label: Images
+          items:
+            type: object
+            fields:
+              - type: string
+                name: link
+                label: Link
+              - type: string
+                name: large_link
+                label: Large Link
+              - type: string
+                name: alt
+                label: Alt
+              - type: markdown
+                name: description
+                label: Description
+              - type: string
+                name: ratio
+                label: Ratio
+  example_menu:
+    type: data
+    label: Example Menu
+    file: example_menu.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: label
+          label: Label
+        - type: list
+          name: items
+          label: Items
+          items:
+            type: object
+            fields:
+              - type: string
+                name: name
+                label: Name
+              - type: string
+                name: link
+                label: Link
+              - type: list
+                name: items
+                label: Items
+                items:
+                  type: object
+                  fields:
+                    - type: string
+                      name: name
+                      label: Name
+                    - type: string
+                      name: link
+                      label: Link
+  example_sponsors:
+    type: data
+    label: Example Sponsors
+    file: example_sponsors.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: tier_name
+          label: Tier Name
+        - type: string
+          name: size
+          label: Size
+        - type: text
+          name: description
+          label: Description
+        - type: list
+          name: sponsors
+          label: Sponsors
+          items:
+            type: object
+            fields:
+              - type: string
+                name: name
+                label: Name
+              - type: string
+                name: profile
+                label: Profile
+  example_tabs:
+    type: data
+    label: Example Tabs
+    file: example_tabs.yml
+    fields:
+      - type: string
+        name: alignment
+        label: Alignment
+      - type: string
+        name: style
+        label: Style
+      - type: string
+        name: size
+        label: Size
+      - type: list
+        name: items
+        label: Items
+        items:
+          type: object
+          fields:
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: link
+              label: Link
+            - type: string
+              name: icon
+              label: Icon
+  data_1:
+    type: data
+    label: Data 1
+    folder: ''
+    fields:
+      - type: string
+        name: style
+        label: Style
+      - type: list
+        name: items
+        label: Items
+        items:
+          type: object
+          fields:
+            - type: string
+              name: title
+              label: Title
+            - type: string
+              name: subtitle
+              label: Subtitle
+            - type: string
+              name: icon
+              label: Icon
+            - type: boolean
+              name: icon_brand
+              label: Icon Brand
+            - type: text
+              name: description
+              label: Description
+            - type: string
+              name: call_to_action_name
+              label: Call To Action Name
+            - type: string
+              name: call_to_action_link
+              label: Call To Action Link
+      - type: string
+        name: height
+        label: Height
+  navigation:
+    type: data
+    label: Navigation
+    file: navigation.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: link
+          label: Link
+        - type: list
+          name: dropdown
+          label: Dropdown
+          items:
+            type: object
+            fields:
+              - type: string
+                name: name
+                label: Name
+              - type: string
+                name: link
+                label: Link
+  abc_123:
+    type: data
+    label: Abc 123
+    file: reviews/ABC123.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: number
+          name: rating
+          label: Rating
+          subtype: int
+        - type: string
+          name: title
+          label: Title
+        - type: string
+          name: date
+          label: Date
+        - type: image
+          name: avatar
+          label: Avatar
+        - type: string
+          name: description
+          label: Description
+  abc_124:
+    type: data
+    label: Abc 124
+    file: reviews/ABC124.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: number
+          name: rating
+          label: Rating
+          subtype: int
+        - type: string
+          name: title
+          label: Title
+        - type: string
+          name: date
+          label: Date
+        - type: image
+          name: avatar
+          label: Avatar
+        - type: string
+          name: description
+          label: Description
+  showcase_example:
+    type: data
+    label: Showcase Example
+    file: showcase_example.yml
+    fields:
+      - type: string
+        name: intro
+        label: Intro
+      - type: list
+        name: items
+        label: Items
+        items:
+          type: object
+          fields:
+            - type: string
+              name: title
+              label: Title
+            - type: string
+              name: subtitle
+              label: Subtitle
+            - type: text
+              name: description
+              label: Description
+            - type: list
+              name: features
+              label: Features
+              items:
+                type: string
+            - type: string
+              name: features_styles
+              label: Features Styles
+            - type: image
+              name: image
+              label: Image
+            - type: string
+              name: image_ratio
+              label: Image Ratio
+            - type: string
+              name: link
+              label: Link
+            - type: string
+              name: link_text
+              label: Link Text
+            - type: string
+              name: tags
+              label: Tags
+            - type: string
+              name: github
+              label: Github
